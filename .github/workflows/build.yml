@@ -38,7 +38,15 @@ jobs:
         if: runner.os == 'macOS'
         run: tccutil reset ScreenCapture
 
+      name: Testing on macOS with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
+        if: runner.os == 'macOS'
+        run: |
+          echo "Run attempt: ${{ matrix.attempt }}"
+          echo "Running tests in headless mode on macOS"
+          npm run test:headless
+          
       - name: Testing on OS (${{ matrix.os }}) with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
+        if: runner.os != 'macOS'
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
           npm test
