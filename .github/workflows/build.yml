@@ -38,7 +38,7 @@ jobs:
         if: runner.os == 'macOS'
         run: tccutil reset ScreenCapture
 
-      name: Testing on macOS with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
+      - name: Testing on macOS with Node.js (version ${{ matrix.node-version }}) attempt ${{ matrix.attempt }}
         if: runner.os == 'macOS'
         run: |
           echo "Run attempt: ${{ matrix.attempt }}"
