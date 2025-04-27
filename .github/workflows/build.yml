@@ -51,4 +51,3 @@ jobs:
           echo "Run attempt: ${{ matrix.attempt }}"
           npm test
 
-      continue-on-error: false
